@@ -1,1 +1,29 @@
-# Hakim
+<DOCTYPE html>
+<html>
+ <head>
+  <title>Foor order </title> 
+ </head>
+ <body>
+    <h2>My Food order page</h2>
+    <p>Topic</p>
+    <p style=“color:red”>The style is attribute of paragraph tag</p>
+
+ <table>
+   <tr>
+     <th>Menu</th>
+     <th>Menu</th>
+
+    </tr>
+    <tr>
+     <td>Crab friend rice <br>
+     <img scr=“menu1.jpg”alt=“Flowers”width=“50”height=“50”>
+     <input
+     <input type=“number” id=“qty“min=“1”value=“1”placeholder=“Quantity”>
+     </td>
+     <td>Small rice noodle</td>
+
+   </tr>
+   </table>
+   </body>
+  </html>
+    
