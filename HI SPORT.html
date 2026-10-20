@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="HI SPORT ร้านเสื้อผ้ากีฬา ใส่สบาย ระบายอากาศดี ส่งทั่วไทย">
+<title>HI SPORT | เสื้อผ้ากีฬาสำหรับทุกการเคลื่อนไหว</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kanit:wght@500;700;800&family=Sarabun:wght@400;600&display=swap">
+<style>
+  :root { --navy:#0b1f3a; --sky:#e8f1fb; --sun:#ffc400; --ink:#10223b; --mid:#5b6b82; --line:#d6e0ee; --red:#e03a3a; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:"Sarabun",system-ui,sans-serif; color:var(--ink); background:#fff; }
+  h1,h2,h3,.logo { font-family:"Kanit",sans-serif; }
+  .bar { background:var(--sun); color:var(--navy); text-align:center; font-weight:600; font-size:14px; padding:7px; }
+  header { background:var(--navy); color:#fff; position:sticky; top:0; z-index:20; display:flex; align-items:center; gap:14px; padding:12px 18px; }
+  .logo { font-weight:800; font-size:26px; letter-spacing:.5px; }
+  .logo span { color:var(--sun); }
+  .search { flex:1; max-width:380px; margin-left:auto; padding:9px 14px; border-radius:20px; border:0; font:inherit; }
+  .icon { position:relative; border:0; background:rgba(255,255,255,.12); color:#fff; font-size:18px; width:42px; height:42px; border-radius:50%; cursor:pointer; }
+  .icon b { position:absolute; top:-3px; right:-3px; background:var(--sun); color:var(--navy); font-size:12px; min-width:19px; height:19px; border-radius:10px; line-height:19px; text-align:center; }
+  /* hero แบบแบ่งสองฝั่งเฉียง */
+  .hero { background:var(--navy); color:#fff; display:grid; grid-template-columns:1.1fr .9fr; min-height:340px; overflow:hidden; }
+  .hero .txt { padding:48px 24px 48px 28px; align-self:center; }
+  .hero h1 { font-size:clamp(38px,8vw,84px); line-height:1.02; font-weight:800; }
+  .hero h1 em { font-style:normal; color:var(--sun); }
+  .hero p { margin:14px 0 22px; color:#b9c8dd; max-width:420px; }
+  .btn { display:inline-block; border:0; background:var(--sun); color:var(--navy); font:inherit; font-weight:700; padding:13px 26px; border-radius:6px; cursor:pointer; text-decoration:none; }
+  .hero .art { background:var(--sun); clip-path:polygon(18% 0,100% 0,100% 100%,0 100%); display:flex; align-items:center; justify-content:center; font-size:clamp(90px,18vw,190px); }
+  main { max-width:1180px; margin:0 auto; padding:34px 18px 20px; }
+  .tabs { display:flex; gap:0; border-bottom:2px solid var(--line); margin-bottom:14px; }
+  .tabs button { border:0; background:none; font:inherit; font-family:"Kanit"; font-size:17px; padding:10px 20px; cursor:pointer; color:var(--mid); border-bottom:4px solid transparent; margin-bottom:-2px; }
+  .tabs button.on { color:var(--navy); border-color:var(--navy); }
+  .tools { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:18px; }
+  .chip { border:1px solid var(--line); background:#fff; font:inherit; padding:6px 14px; border-radius:6px; cursor:pointer; }
+  .chip.on { background:var(--navy); border-color:var(--navy); color:#fff; }
+  .tools select { margin-left:auto; padding:7px 10px; border:1px solid var(--line); border-radius:6px; font:inherit; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:16px; }
+  .card { border:1px solid var(--line); border-radius:8px; overflow:hidden; display:flex; flex-direction:column; }
+  .pic { position:relative; aspect-ratio:1/1; background:var(--sky); display:flex; align-items:center; justify-content:center; font-size:70px; }
+  .pic img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .heart { position:absolute; top:8px; right:8px; border:0; background:#fff; width:34px; height:34px; border-radius:50%; cursor:pointer; font-size:16px; z-index:2; }
+  .badge { position:absolute; top:8px; left:8px; background:var(--red); color:#fff; font-size:12px; font-weight:700; padding:3px 8px; border-radius:4px; z-index:2; }
+  .body { padding:12px; display:flex; flex-direction:column; gap:6px; flex:1; }
+  .pname { font-weight:600; }
+  .meta { color:var(--mid); font-size:13px; }
+  .price { font-family:"Kanit"; font-size:19px; font-weight:700; }
+  .price s { color:var(--mid); font-size:14px; font-weight:500; margin-left:6px; }
+  .sz { display:flex; flex-wrap:wrap; gap:5px; }
+  .sz button { border:1px solid var(--line); background:#fff; border-radius:5px; padding:4px 9px; font:inherit; font-size:13px; cursor:pointer; }
+  .sz button.on { background:var(--navy); color:#fff; border-color:var(--navy); }
+  .card .btn { width:100%; margin-top:auto; padding:10px; }
+  .none { grid-column:1/-1; text-align:center; padding:40px; color:var(--mid); }
+  .perks { background:var(--sky); display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:14px; padding:26px 18px; margin-top:30px; }
+  .perks div { max-width:260px; margin:auto; font-size:14px; color:var(--mid); }
+  .perks b { display:block; color:var(--navy); font-size:16px; }
+  .faq { max-width:760px; margin:0 auto; padding:34px 18px; }
+  .faq h2 { margin-bottom:12px; }
+  details { border-bottom:1px solid var(--line); padding:12px 0; }
+  summary { font-weight:600; cursor:pointer; }
+  details p { margin-top:8px; color:var(--mid); }
+  footer { background:var(--navy); color:#9fb1c9; padding:30px 18px; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:18px; font-size:14px; line-height:1.7; }
+  footer b { color:#fff; }
+  /* ลิ้นชักตะกร้า / รายการโปรด */
+  .shade { position:fixed; inset:0; background:rgba(5,15,30,.55); opacity:0; pointer-events:none; transition:opacity .2s; z-index:40; }
+  .shade.open { opacity:1; pointer-events:auto; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(430px,100%); background:#fff; z-index:41; transform:translateX(100%); transition:transform .25s; display:flex; flex-direction:column; }
+  .drawer.open { transform:none; }
+  .dh { display:flex; justify-content:space-between; align-items:center; padding:16px 18px; background:var(--navy); color:#fff; }
+  .dh button { border:0; background:none; color:#fff; font-size:24px; cursor:pointer; }
+  .db { flex:1; overflow:auto; padding:6px 18px; }
+  .row { display:flex; gap:12px; padding:12px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .row .pic { width:64px; aspect-ratio:1; font-size:28px; flex:none; border-radius:6px; }
+  .row .i { flex:1; }
+  .q { display:inline-flex; align-items:center; gap:8px; margin-top:6px; }
+  .q button { width:26px; height:26px; border:1px solid var(--line); background:#fff; border-radius:5px; cursor:pointer; }
+  .df { border-top:1px solid var(--line); padding:14px 18px; max-height:62%; overflow:auto; }
+  .sum { display:flex; justify-content:space-between; font-size:14px; padding:2px 0; }
+  .sum.t { font-weight:700; font-size:18px; margin:4px 0 10px; }
+  .df input, .df textarea { width:100%; padding:9px; margin-bottom:7px; border:1px solid var(--line); border-radius:6px; font:inherit; }
+  .df textarea { height:56px; resize:none; }
+  .df .btn { width:100%; }
+  .note { font-size:13px; color:var(--mid); background:var(--sky); padding:8px; border-radius:6px; margin-bottom:8px; }
+  .msg { color:var(--red); font-size:14px; min-height:18px; }
+  .empty { text-align:center; color:var(--mid); padding:40px 0; }
+  @media (max-width:640px){ .hero{grid-template-columns:1fr} .hero .art{display:none} .search{display:none} header{justify-content:space-between} }
+</style>
+</head>
+<body>
+
+<div class="bar">โปรโมชันฤดูกาลใหม่ — ลดสูงสุด 25% · ส่งฟรีเมื่อครบ ฿1,000</div>
+
+<header>
+  <div class="logo">HI<span>SPORT</span></div>
+  <input class="search" id="q" placeholder="ค้นหาสินค้า เช่น เสื้อวิ่ง" oninput="renderGrid()">
+  <button class="icon" onclick="openDrawer('fav')" aria-label="รายการโปรด">♡<b id="favN">0</b></button>
+  <button class="icon" onclick="openDrawer('cart')" aria-label="ตะกร้า">🛒<b id="cartN">0</b></button>
+</header>
+
+<section class="hero">
+  <div class="txt">
+    <h1>ขยับให้สุด<br>แล้วให้ชุดทำ<em>ที่เหลือ</em></h1>
+    <p>ผ้าเบา ระบายเหงื่อไว ตัดเย็บทนทาน สำหรับวิ่ง เล่นบอล และเทรนนิ่งทุกวัน</p>
+    <a class="btn" href="#shop">เลือกชุดของคุณ</a>
+  </div>
+  <div class="art">🏃</div>
+</section>
+
+<main id="shop">
+  <div class="tabs" id="tabs"></div>
+  <div class="tools">
+    <span id="chips" style="display:contents"></span>
+    <select id="sort" onchange="renderGrid()" aria-label="เรียงตาม">
+      <option value="">เรียงตาม: แนะนำ</option>
+      <option value="asc">ราคาต่ำ → สูง</option>
+      <option value="desc">ราคาสูง → ต่ำ</option>
+    </select>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="perks">
+  <div><b>🧵 ตัดเย็บมาตรฐาน</b>ตรวจงานทุกชิ้นก่อนแพ็ก</div>
+  <div><b>💨 ผ้าระบายอากาศ</b>แห้งไว ใส่สบายตลอดวัน</div>
+  <div><b>📏 ตารางไซส์ชัดเจน</b>S ถึง XXL มีขนาดเด็กด้วย</div>
+  <div><b>🚚 ส่งฟรีครบ ฿1,000</b>ค่าส่งปกติ ฿50</div>
+</section>
+
+<section class="faq">
+  <h2>คำถามที่พบบ่อย</h2>
+  <details><summary>สั่งซื้ออย่างไร?</summary><p>เลือกไซส์ กด "ใส่ตะกร้า" กรอกชื่อ เบอร์โทร ที่อยู่ แล้วกดส่งออเดอร์ ร้านจะติดต่อกลับเพื่อแจ้งเลขบัญชีและยืนยันยอด</p></details>
+  <details><summary>เปลี่ยนไซส์ได้ไหม?</summary><p>เปลี่ยนได้ภายใน 7 วันหลังรับของ หากสินค้ายังไม่ได้ใช้งานและป้ายครบ</p></details>
+  <details><summary>จัดส่งกี่วัน?</summary><p>ปกติ 1–3 วันทำการหลังยืนยันการโอนเงิน</p></details>
+  <details><summary>ใส่ตะกร้าแล้วถือว่าจองไหม?</summary><p>ไม่ถือเป็นการจอง กรุณาส่งออเดอร์และโอนเงินภายใน 24 ชั่วโมง</p></details>
+</section>
+
+<footer>
+  <div><b>HI SPORT</b><br>เสื้อผ้ากีฬาสำหรับทุกการเคลื่อนไหว<br>เปิดทุกวัน 09:00–21:00</div>
+  <div><b>ติดต่อร้าน</b><br>LINE: @hisport<br>IG: @hisport<br>โทร: 08x-xxx-xxxx</div>
+  <div><b>© 2026 HI SPORT</b><br>เว็บไซต์ตัวอย่างเพื่อการเรียน</div>
+</footer>
+
+<div class="shade" id="shade" onclick="closeDrawer()"></div>
+
+<aside class="drawer" id="cartD" aria-label="ตะกร้า">
+  <div class="dh"><h3>ตะกร้าของคุณ</h3><button onclick="closeDrawer()" aria-label="ปิด">×</button></div>
+  <div class="db" id="lines"></div>
+  <!-- ใส่ endpoint Formspree ของคุณตรงนี้ -->
+  <form class="df" action="https://formspree.io/f/mrpgnvyv" method="POST" onsubmit="return submitOrder()">
+    <div class="sum"><span>ยอดสินค้า</span><span id="sub">฿0</span></div>
+    <div class="sum"><span>ค่าจัดส่ง</span><span id="ship">฿0</span></div>
+    <div class="sum t"><span>รวมทั้งหมด</span><span id="grand">฿0</span></div>
+    <input id="cn" placeholder="ชื่อ-นามสกุล *" required>
+    <input id="cp" type="tel" placeholder="เบอร์โทร *" required>
+    <input id="cl" placeholder="LINE / Instagram (ถ้ามี)">
+    <textarea id="ca" placeholder="ที่อยู่จัดส่ง *" required></textarea>
+    <textarea id="cm" placeholder="หมายเหตุ"></textarea>
+    <div class="note">ชำระโดยโอนเงิน ร้านจะส่งเลขบัญชีให้ทางข้อความหลังได้รับออเดอร์</div>
+    <input type="hidden" name="order" id="order">
+    <div class="msg" id="msg"></div>
+    <button class="btn" type="submit">ส่งออเดอร์ไปที่ร้าน</button>
+  </form>
+</aside>
+
+<aside class="drawer" id="favD" aria-label="รายการโปรด">
+  <div class="dh"><h3>รายการโปรด</h3><button onclick="closeDrawer()" aria-label="ปิด">×</button></div>
+  <div class="db" id="favLines"></div>
+</aside>
+
+<script>
+// ===== แก้สินค้าที่นี่ (รูปวางในโฟลเดอร์ images/) =====
+// g: ผู้ชาย / ผู้หญิง / เด็ก   t: ประเภท   old: ราคาก่อนลด (ไม่ใส่ก็ได้)
+const PRODUCTS = [
+  { id:1, name:"เสื้อวิ่งผ้าเบา",         g:"ผู้ชาย",  t:"เสื้อ",   price:290, old:390, emoji:"👕", img:"images/m_run_shirt.jpg" },
+  { id:2, name:"เสื้อฟุตบอลคอวี",        g:"ผู้ชาย",  t:"เสื้อ",   price:390, emoji:"⚽", img:"images/m_jersey.jpg" },
+  { id:3, name:"กางเกงขาสั้นเทรนนิ่ง",    g:"ผู้ชาย",  t:"กางเกง", price:250, emoji:"🩳", img:"images/m_shorts.jpg" },
+  { id:4, name:"แจ็กเก็ตกันลมพับเก็บได้",  g:"ผู้ชาย",  t:"แจ็กเก็ต", price:590, old:790, emoji:"🧥", img:"images/m_jacket.jpg" },
+  { id:5, name:"สปอร์ตบราซัพพอร์ตสูง",    g:"ผู้หญิง", t:"เสื้อ",   price:320, emoji:"🎽", img:"images/w_bra.jpg" },
+  { id:6, name:"เลกกิ้งเอวสูง",           g:"ผู้หญิง", t:"กางเกง", price:350, old:450, emoji:"🧘", img:"images/w_leggings.jpg" },
+  { id:7, name:"ฮู้ดดี้ซิปหน้า",          g:"ผู้หญิง", t:"แจ็กเก็ต", price:690, emoji:"🧶", img:"images/w_hoodie.jpg" },
+  { id:8, name:"ชุดกีฬาเด็กเสื้อ+กางเกง", g:"เด็ก",    t:"เสื้อ",   price:420, emoji:"🧒", img:"images/k_set.jpg" },
+  { id:9, name:"กางเกงวอร์มเด็ก",         g:"เด็ก",    t:"กางเกง", price:280, emoji:"👖", img:"images/k_pants.jpg" },
+  { id:10,name:"ถุงเท้ากีฬา 3 คู่",        g:"ผู้ชาย",  t:"อุปกรณ์", price:120, emoji:"🧦", img:"images/socks.jpg" }
+];
+const SIZES = ["S","M","L","XL","XXL"], KID = ["120","130","140","150"];
+const GENDERS = ["ทั้งหมด","ผู้ชาย","ผู้หญิง","เด็ก"], TYPES = ["ทั้งหมด","เสื้อ","กางเกง","แจ็กเก็ต","อุปกรณ์"];
+const FREE_FROM = 1000, SHIP = 50;
+let g = "ทั้งหมด", t = "ทั้งหมด", cart = [], fav = [], pick = {};
+
+const $ = id => document.getElementById(id);
+const baht = n => "฿" + n.toLocaleString("th-TH");
+const sizesOf = p => p.g === "เด็ก" ? KID : SIZES;
+const pic = (p, extra="") => `<div class="pic">${extra}<img src="${p.img}" alt="${p.name}" onerror="this.remove()">${p.emoji}</div>`;
+
+function renderFilters(){
+  $("tabs").innerHTML = GENDERS.map(x => `<button class="${x===g?'on':''}" onclick="g='${x}';renderFilters();renderGrid()">${x}</button>`).join("");
+  $("chips").innerHTML = TYPES.map(x => `<button class="chip ${x===t?'on':''}" onclick="t='${x}';renderFilters();renderGrid()">${x}</button>`).join("");
+}
+function renderGrid(){
+  const kw = $("q").value.trim().toLowerCase(), s = $("sort").value;
+  let list = PRODUCTS.filter(p => (g==="ทั้งหมด"||p.g===g) && (t==="ทั้งหมด"||p.t===t) && p.name.toLowerCase().includes(kw));
+  if(s) list.sort((a,b) => s==="asc" ? a.price-b.price : b.price-a.price);
+  $("grid").innerHTML = list.length ? list.map(p => {
+    const off = p.old ? Math.round((1-p.price/p.old)*100) : 0;
+    const badge = (off ? `<span class="badge">-${off}%</span>` : "") + `<button class="heart" onclick="toggleFav(${p.id})" aria-label="โปรด">${fav.includes(p.id)?'❤️':'🤍'}</button>`;
+    return `<div class="card">${pic(p,badge)}<div class="body">
+      <div class="pname">${p.name}</div><div class="meta">${p.g} · ${p.t}</div>
+      <div class="price">${baht(p.price)}${p.old?`<s>${baht(p.old)}</s>`:""}</div>
+      <div class="sz">${sizesOf(p).map(z => `<button class="${pick[p.id]===z?'on':''}" onclick="pick[${p.id}]='${z}';renderGrid()">${z}</button>`).join("")}</div>
+      <button class="btn" onclick="add(${p.id})">หยิบใส่ตะกร้า</button></div></div>`;
+  }).join("") : `<div class="none">ไม่พบสินค้าที่ตรงกับตัวกรอง 😢<br><br><button class="btn" onclick="g=t='ทั้งหมด';$('q').value='';renderFilters();renderGrid()">ล้างตัวกรอง</button></div>`;
+}
+
+function toggleFav(id){ fav = fav.includes(id) ? fav.filter(x=>x!==id) : [...fav,id]; renderGrid(); renderFav(); }
+function renderFav(){
+  $("favN").textContent = fav.length;
+  $("favLines").innerHTML = fav.length ? fav.map(id => { const p = PRODUCTS.find(x=>x.id===id);
+    return `<div class="row">${pic(p)}<div class="i"><b>${p.name}</b><br>${baht(p.price)}<br><button class="chip" onclick="toggleFav(${id})">นำออก</button></div></div>`; }).join("")
+    : '<div class="empty">ยังไม่มีสินค้าที่ถูกใจ</div>';
+}
+function add(id){
+  const p = PRODUCTS.find(x=>x.id===id), size = pick[id];
+  if(!size){ alert("กรุณาเลือกไซส์ก่อน"); return; }
+  const f = cart.find(c => c.id===id && c.size===size);
+  f ? f.qty++ : cart.push({ id, size, qty:1 });
+  renderCart(); openDrawer("cart");
+}
+function chg(i,d){ cart[i].qty += d; if(cart[i].qty<=0) cart.splice(i,1); renderCart(); }
+function totals(){
+  const sub = cart.reduce((s,c) => s + PRODUCTS.find(x=>x.id===c.id).price*c.qty, 0);
+  const ship = sub===0 ? 0 : (sub>=FREE_FROM ? 0 : SHIP);
+  return { sub, ship, grand: sub+ship };
+}
+function renderCart(){
+  $("cartN").textContent = cart.reduce((s,c)=>s+c.qty,0);
+  $("lines").innerHTML = cart.length ? cart.map((c,i) => { const p = PRODUCTS.find(x=>x.id===c.id);
+    return `<div class="row">${pic(p)}<div class="i"><b>${p.name}</b><br>ไซส์ ${c.size} · ${baht(p.price)}<br>
+      <span class="q"><button type="button" onclick="chg(${i},-1)">−</button>${c.qty}<button type="button" onclick="chg(${i},1)">+</button></span></div></div>`; }).join("")
+    : '<div class="empty">ตะกร้ายังว่างอยู่</div>';
+  const T = totals();
+  $("sub").textContent = baht(T.sub);
+  $("ship").textContent = T.ship ? baht(T.ship) : (T.sub ? "ฟรี" : "฿0");
+  $("grand").textContent = baht(T.grand);
+}
+function openDrawer(w){ closeDrawer(); $(w==="cart"?"cartD":"favD").classList.add("open"); $("shade").classList.add("open"); }
+function closeDrawer(){ document.querySelectorAll(".drawer").forEach(d=>d.classList.remove("open")); $("shade").classList.remove("open"); }
+
+function submitOrder(){
+  if(!cart.length){ $("msg").textContent = "ใส่สินค้าในตะกร้าก่อนส่งออเดอร์"; return false; }
+  const T = totals();
+  const lines = cart.map(c => { const p = PRODUCTS.find(x=>x.id===c.id);
+    return `- ${p.name} | ไซส์ ${c.size} | ${c.qty} ชิ้น x ${baht(p.price)} = ${baht(p.price*c.qty)}`; });
+  $("order").value = "รายการสั่งซื้อ:\n" + lines.join("\n") +
+    `\n\nยอดสินค้า: ${baht(T.sub)}\nค่าจัดส่ง: ${T.ship?baht(T.ship):"ฟรี"}\nรวมทั้งหมด: ${baht(T.grand)}` +
+    `\n\nชื่อ: ${$("cn").value}\nเบอร์โทร: ${$("cp").value}\nLINE/IG: ${$("cl").value||"-"}\nที่อยู่: ${$("ca").value}\nหมายเหตุ: ${$("cm").value||"-"}`;
+  return true;
+}
+
+renderFilters(); renderGrid(); renderCart(); renderFav();
+</script>
+</body>
+</html>
